@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "recon47"
+version = "1.0.0"
+description = "Automated web reconnaissance and vulnerability scanning CLI tool"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+keywords = ["recon", "reconnaissance", "security", "scanner", "vulnerability"]
+dependencies = [
+    "click>=8.0.0",
+    "requests>=2.28.0",
+    "dnspython>=2.3.0",
+    "colorama>=0.4.6",
+    "urllib3>=1.26.0",
+]
+
+[project.scripts]
+recon47 = "recon47.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["recon47*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
